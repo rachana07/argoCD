@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: swe
+  name: swe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: swe
+  template:
+    metadata:
+      labels:
+        app: swe
+    spec:
+      containers:
+      - image: rachanathota/swe645:latest
+        name: swe
